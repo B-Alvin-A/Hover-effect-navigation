@@ -6,4 +6,18 @@
     .textStroke{
         -webkit-text-stroke:1px rgba(255,255,255,0.5);
     }
+    .before-text::before{
+        content: attr(data-text);
+        position: absolute;
+        color: var(--clr);
+        width: 0;
+        overflow: hidden;
+        transition: 1s;
+        -webkit-text-stroke: 1px var(--clr);
+    }
+    
+    .before-text:hover::before{
+        width: 100%;
+        filter: drop-shadow(0 0 25px var(--clr));
+    }
 }
